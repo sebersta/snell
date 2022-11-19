@@ -1,12 +1,12 @@
 #!/bin/bash
 
-if cat /etc/issue | grep -q -E -i "debian|ubuntu|armbian|deepin|mint"; then 	# install dependencies
+if cat /etc/*-release | grep -q -E -i "debian|ubuntu|armbian|deepin|mint"; then 	# install dependencies
 	apt-get install wget unzip dpkg -y
-elif cat /etc/issue | grep -q -E -i "centos|red hat|redhat"; then
+elif cat /etc/*-release | grep -q -E -i "centos|red hat|redhat"; then
 	yum install wget unzip dpkg -y
-elif cat /proc/version | grep -q -E -i "arch|manjora"; then
+elif cat /etc/*-release | grep -q -E -i "arch|manjora"; then
 	yes | pacman -S wget dpkg unzip
-elif cat /proc/version | grep -q -E -i "fedora"; then
+elif cat /etc/*-release | grep -q -E -i "fedora"; then
 	dnf install wget unzip dpkg -y
 fi
 
