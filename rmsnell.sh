@@ -7,5 +7,5 @@ rm /etc/systemd/system/snell.service
 cd
 ARCHITECTURE=$(dpkg --print-architecture)
 rm snell-server-v4.0.0-linux-$ARCHITECTURE.zip
-rm snell-server-v4.0.0-linux-$ARCHITECTURE
+y | rm snell-server
 rm snell-server.conf
