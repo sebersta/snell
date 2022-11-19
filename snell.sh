@@ -20,19 +20,10 @@ ARCHITECTURE=$(dpkg --print-architecture)
 wget -c https://dl.nssurge.com/snell/snell-server-v4.0.0-linux-$ARCHITECTURE.zip	# download binary
 unzip -o snell-server-v4.0.0-linux-$ARCHITECTURE.zip
 
-echo \					# create service
-	'[Unit]
-Description=snell server
-[Service]
-User=root
-WorkingDirectory=/root
-ExecStart=/root/snell-server
-Restart=always
-[Install]
-WantedBy=multi-user.target' > /etc/systemd/system/snell.service
+echo -e "[Unit]\nDescription=snell server\n[Service]\nUser=root\nWorkingDirectory=/root\nExecStart=/root/snell-server\nRestart=always\n[Install]\nWantedBy=multi-user.target" > /etc/systemd/system/snell.service
 y | ./snell-server
-systemctl enable snell			# start service
 systemctl start snell
+systemctl enable snell			# start service
 
 echo
 echo "Copy the following line to surge"			# print profile
