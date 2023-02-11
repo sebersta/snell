@@ -17,7 +17,7 @@ sysctl net.ipv4.tcp_available_congestion_control
 
 cd
 ARCHITECTURE=$(dpkg --print-architecture)
-wget -c https://dl.nssurge.com/snell/snell-server-v4.0.0-linux-$ARCHITECTURE.zip	# download binary
+wget -c https://dl.nssurge.com/snell/snell-server-v4.0.1-linux-$ARCHITECTURE.zip	# download binary
 unzip -o snell-server-v4.0.0-linux-$ARCHITECTURE.zip
 
 echo -e "[Unit]\nDescription=snell server\n[Service]\nUser=root\nWorkingDirectory=/root\nExecStart=/root/snell-server\nRestart=always\n[Install]\nWantedBy=multi-user.target" > /etc/systemd/system/snell.service
