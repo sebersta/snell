@@ -28,6 +28,3 @@ systemctl enable snell			# start service
 echo
 echo "Copy the following line to surge"			# print profile
 echo "$(curl -s ipinfo.io/city) = snell, $(curl -s ipinfo.io/ip), $(cat snell-server.conf | grep -i listen | cut --delimiter=':' -f2),psk=$(grep 'psk' snell-server.conf | cut -d= -f2 | tr -d ' '), version=4, tfo=true"
-
-echo
-echo "For shadowrocket users, open the following url scheme in the browser."
