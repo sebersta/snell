@@ -1,10 +1,10 @@
-# Snell v4一键安装脚本
+# Snell v4 installation script
 
-## 安装
+## Install
 ```bash
 sudo bash -c "$(curl -sL https://raw.githubusercontent.com/SebErstellen/snell/main/snell.sh)"
 ```
-## 卸载
+## Uninstall
 ```bash
 sudo bash -c "$(curl -sL https://raw.githubusercontent.com/SebErstellen/snell/main/rmsnell.sh)"
 ```
