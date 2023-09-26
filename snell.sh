@@ -4,7 +4,7 @@ if cat /etc/*-release | grep -q -E -i "debian|ubuntu|armbian|deepin|mint"; then 
 	apt-get install wget unzip dpkg -y
 elif cat /etc/*-release | grep -q -E -i "centos|red hat|redhat"; then
 	yum install wget unzip dpkg -y
-elif cat /etc/*-release | grep -q -E -i "arch|manjora"; then
+elif cat /etc/*-release | grep -q -E -i "arch|Manjaro"; then
 	yes | pacman -S wget dpkg unzip
 elif cat /etc/*-release | grep -q -E -i "fedora"; then
 	dnf install wget unzip dpkg -y
