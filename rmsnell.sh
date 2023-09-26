@@ -1,8 +1,8 @@
 #!/bin/bash
 
-systemctl stop snell.service
-systemctl disable snell.service
-rm -f /etc/systemd/system/snell.service
+sudo systemctl stop snell.service
+sudo systemctl disable snell.service
+sudo rm -f /etc/systemd/system/snell.service
 
 cd
 ARCHITECTURE=$(dpkg --print-architecture)
