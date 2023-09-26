@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Check if script is run as root and exit if it is
+if [ "$(id -u)" -eq 0 ]; then
+    echo "This script should not be run as root. Please run it as a regular user." 
+    exit 1
+fi
+
 sudo systemctl stop snell.service
 sudo systemctl disable snell.service
 sudo rm -f /etc/systemd/system/snell.service
