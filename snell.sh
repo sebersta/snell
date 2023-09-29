@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Check if script is run as root and exit if it is
-if [ "$(id -u)" -eq 0 ]; then
-    echo "This script should not be run as root. Please run it as a regular user." 
-    exit 1
-fi
 
 # Install dependencies based on the Linux distribution
 if cat /etc/*-release | grep -q -E -i "debian|ubuntu|armbian|deepin|mint"; then
