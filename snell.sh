@@ -19,7 +19,7 @@ sudo sysctl -p
 sudo sysctl net.ipv4.tcp_available_congestion_control
 
 cd
-ARCHITECTURE=$(uname -m)
+ARCHITECTURE=$(dpkg --print-architecturem)
 wget -c https://dl.nssurge.com/snell/snell-server-v4.0.1-linux-$ARCHITECTURE.zip
 unzip -o snell-server-v4.0.1-linux-$ARCHITECTURE.zip
 
