@@ -21,6 +21,10 @@ sudo sysctl net.ipv4.tcp_available_congestion_control
 cd
 ARCHITECTURE=$(dpkg --print-architecturem)
 wget -c https://dl.nssurge.com/snell/snell-server-v4.0.1-linux-$ARCHITECTURE.zip
+if [ $? -ne 0 ]; then
+    echo "Download failed!"
+    exit 1
+fi
 unzip -o snell-server-v4.0.1-linux-$ARCHITECTURE.zip
 
 # Create systemd service
