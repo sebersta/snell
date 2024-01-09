@@ -3,10 +3,10 @@
 [Snell protocal official manual](https://manual.nssurge.com/others/snell.html)
 ## Install
 ```bash
-bash -c "$(curl -sL https://raw.githubusercontent.com/SebErstellen/snell/main/snell.sh)"
+bash -c "$(curl -sL https://raw.githubusercontent.com/sebersta/snell/main/snell.sh)"
 ```
 ## Uninstall
 ```bash
-bash -c "$(curl -sL https://raw.githubusercontent.com/SebErstellen/snell/main/rmsnell.sh)"
+bash -c "$(curl -sL https://raw.githubusercontent.com/sebersta/snell/main/rmsnell.sh)"
 ```
 
