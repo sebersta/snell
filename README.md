@@ -1,6 +1,6 @@
-# Snell v4 installation script
+# Snell v4 Installation Script
 
-[Snell protocal official manual](https://manual.nssurge.com/others/snell.html)
+[Official Snell Protocol Manual](https://manual.nssurge.com/others/snell.html)
 ## Install
 ```bash
 bash -c "$(curl -sL https://raw.githubusercontent.com/sebersta/snell/main/snell.sh)"
