@@ -18,6 +18,7 @@ echo "net.ipv4.tcp_congestion_control=bbr" | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
 sudo sysctl net.ipv4.tcp_available_congestion_control
 
+# Download and install snell
 cd
 ARCH=$(uname -m)
 BASE_URL="https://dl.nssurge.com/snell/snell-server-v4.0.1-linux"
@@ -45,7 +46,7 @@ if [ $? -ne 0 ]; then
     echo "Download failed!"
     exit 1
 fi
-unzip -o ${PACKAGE##*/}
+unzip -o ${PACKAGE##*/} 
 
 # Create systemd service
 echo -e "[Unit]\nDescription=snell server\n[Service]\nUser=$(whoami)\nWorkingDirectory=$HOME\nExecStart=$HOME/snell-server\nRestart=always\n[Install]\nWantedBy=multi-user.target" | sudo tee /etc/systemd/system/snell.service > /dev/null
@@ -53,7 +54,7 @@ echo "y" | sudo ./snell-server
 sudo systemctl start snell
 sudo systemctl enable snell
 
-# Print profile
+# print snell server info
 echo
-echo "Copy the following line to surge"
+echo "Copy the following line to Surge, under the [Proxy] section:" 
 echo "$(curl -s ipinfo.io/city) = snell, $(curl -s ipinfo.io/ip), $(cat snell-server.conf | grep -i listen | cut --delimiter=':' -f2), psk=$(grep 'psk' snell-server.conf | cut -d= -f2 | tr -d ' '), version=4, tfo=true"
